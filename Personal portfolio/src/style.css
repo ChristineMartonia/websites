@@ -128,7 +128,7 @@ header {
     height: 50px;
     line-height: 50px;
     background-color: white;
-    z-index:1;
+    z-index:2;
 }
 
 
@@ -198,7 +198,7 @@ header a {
     color: black;
 }
 #stories {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(4, 8, 10, 0.75)), url('https://i.pinimg.com/originals/ba/c2/46/bac246086148e341927f38442fe9fce6.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(4, 8, 10, 0.75)), url('https://i.pinimg.com/564x/c1/c6/21/c1c62189b5a5c26a96263752925c25dd.jpg');
 }
 span{
     color:#ed0e0e;
@@ -255,7 +255,6 @@ span{
   font-size: 35px;
   color: white;
 }
-
 
 .stories .title::after{
     content: "Her Thoughts";
@@ -435,7 +434,7 @@ footer span a:hover{
     left: 0;
     height:100%;
     width: 100%;
-    z-index: 1;
+    z-index: 4;
     background:white;
     display: flex;
     align-items: center;
