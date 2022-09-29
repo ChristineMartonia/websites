@@ -96,7 +96,7 @@ header a {
 }
  
 #feature {
-    background-color: #FFEFEF;
+    background-color: #D5ECC2;
 }
 .content{
     box-sizing: border-box;
@@ -107,7 +107,7 @@ header a {
     box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
    
 }
-.main {
+.main, .main1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,6 +119,20 @@ header a {
     180deg,
     #87A8A4,
     #B5EAEA,
+    rgb(110, 110, 110)
+  );
+  padding: 40px 30px;
+  border-radius: 10px;
+  color: black;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+  border: black solid 2px;
+}
+.main1 {
+  background-image: linear-gradient(
+    180deg,
+    #FFAAA7,
+    #FFD3B4,
     rgb(110, 110, 110)
   );
   padding: 40px 30px;
@@ -243,16 +257,16 @@ input:focus {
             </div>
         </section>
         <section id="feature">
-            <div class="main">
+            <div class="main1">
                 <h1>Month Indentifier</h1>
-                <h4>dd-mm-yyyy format</h4>
+                <h4>dd/mm/yyyy format</h4>
                 <label for="start" id="from-date">
                     Enter the Date:
                 </label>
                 <input type="date" name="begin"
-                    placeholder="dd-mm-yyyy" value=""
+                    placeholder="dd/mm/yyyy" value=""
                     min="1997-01-01" max="2030-12-31" id="tdate">
-                <button id="month-pick" onclick=monthGetter()>GET MONTH</button>
+                <button id="month-pick">GET MONTH</button>
                 <input type="text" id="result" placeholder="Month" readonly>
             </div>
  
@@ -260,7 +274,7 @@ input:focus {
         </section>
  
         <section class="about" id="about">
-            <div class="main">
+            <div class="main2">
                 <h1>WEEKEND CHECKER</h1>
                 <h4>dd-mm-yyyy format</h4>
                 <label for="start" id="from-date">
@@ -268,17 +282,13 @@ input:focus {
                 </label>
                 <input type="date" name="begin"
                     placeholder="dd-mm-yyyy" value=""
-                    min="1997-01-01" max="2030-12-31" id="tdate">
-                <button id="month-pick" onclick=monthGetter()>WEEKEND CHECK</button>
-                <input type="text" id="result" placeholder="Month" readonly>
+                    min="1997-01-01" max="2030-12-31" id="wdate">
+                <button id="week-check" onclick=weekGetter()>WEEKEND CHECK</button>
+                <input type="text" id="result" placeholder="it is.." readonly>
             </div>
         </section>
        
     </main>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
-
-
-
- 
