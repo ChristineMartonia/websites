@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -195,8 +196,22 @@ input {
 input:focus {
   box-shadow: 0px 6px 10px 1px rgba(0, 0, 0, 0.5);
 }
+
+#month-pick {
+  padding: 7px 15px;
+  border: black solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s transform;
+  background-color: #61C0BF ;
  
-#convert-button {
+}
+ 
+#month-pick:active {
+  transform: scale(0.9);
+}
+ 
+#convert-button, .week-check {
   padding: 7px 15px;
   border: black solid 1px;
   border-radius: 5px;
@@ -206,7 +221,7 @@ input:focus {
  
 }
  
-#convert-button:active {
+#convert-button, .week-check:active {
   transform: scale(0.9);
 }
  
@@ -306,16 +321,18 @@ input:focus {
                 <label for="start" id="from-date">
                     Enter the Date:
                 </label>
-                <input type="date" name="begin"
-                    placeholder="dd-mm-yyyy" value=""
-                    min="1997-01-01" max="2030-12-31" id="wdate">
-                <button id="week-check" onclick=weekGetter()>WEEKEND CHECK</button>
-                <input type="text" id="result" placeholder="it is.." readonly>
+                <input type="date" 
+                    placeholder="dd-mm-yyyy" 
+                     class="day">
+                <button class="week-check">DAY CHECK</button>
+                <label for="result"></label>
+                <input type="text" placeholder="it is.." disabled class="result">
+
             </div>
             <img class="gif" src="https://thumbs.gfycat.com/AnguishedGrayCockroach-size_restricted.gif">
         </section>
        
     </main>
-    <script src="../script.js"></script>
+    <script src="../bt/script.js"></script>
 </body>
 </html>
