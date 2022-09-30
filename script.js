@@ -131,7 +131,7 @@ $(document).ready(function(){
         } else{ 
             let day = m.getDay();
         
-            if(day>5){
+            if(day==6, day==0){
                 day = "Weekend"
                 $(".result").val(day)
             }else{
