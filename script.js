@@ -122,6 +122,29 @@ const month = months[date-1];
 
 
 //Create a function that accepts a date and will determine if the said date is   a weekend.
-
-
-
+$(document).ready(function(){
+   
+    function dayIdentifier(){
+        var m = new Date($(".day").val());
+        if(m=="Invalid Date"){
+            alert("please put valid Date!!")
+        } else{ 
+            let day = m.getDay();
+        
+            if(day>5){
+                day = "Weekend"
+                $(".result").val(day)
+            }else{
+                day = "Weekday"
+                $(".result").val(day)
+            }}  
+    
+    }
+     $(".week-check").click(function(){
+       
+     
+         dayIdentifier();
+     
+        
+     })
+    })
