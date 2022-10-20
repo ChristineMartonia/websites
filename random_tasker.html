@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: beige;
+            min-height: 100vh;
+            text-align:center;
+            padding: 100px;
+        }
+        .container{
+            background-color: aqua;
+            width: 80vh;
+            padding: 40px;
+            height: 35vh;
+            border-left: 3px solid black;
+        }
+        .task-text{
+            min-height: 20vh;
+
+        }
+        .container h1{
+            font-size: 50px;
+            text-align: left;
+            
+        }
+        .container p{
+            text-transform: capitalize;
+            color:black;
+            text-align: right;
+            font-style: italic;
+            font-size: 30px;
+        }
+        #btn{
+            margin-top: 30px;
+            font-size: 25px;
+            padding: 10px 20px;
+            border-color: blueviolet;
+        }
+        #btn:hover{
+            color: gray;
+            background-color: rgb(150, 181, 59);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="task-text">
+            <h1 id="task"> Here are your task for today's video</h1>
+            
+        </div>
+        <button id="btn">Click Here</button>
+
+    </div>
+
+    
+</body>
+</html>
