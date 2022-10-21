@@ -7,6 +7,24 @@
     <title>The Easiest Way to Add Input Masks to Your Forms</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/
+    4.0.0/css/bootstrap.min.css">
+    <!-- jQuery library
+    
+    "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" --password
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/
+    jquery/3.3.1/jquery.min.js">
+    </script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/
+    popper.js/1.12.9/umd/popper.min.js">
+    </script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/
+    4.0.0/js/bootstrap.min.js">
+    </script>
     <style>
         body{
     background-color: #FFD3B4;
@@ -126,6 +144,7 @@ li{
         </nav>
     </header>
     <div class="registration-form">
+        
         <form>
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
@@ -259,8 +278,9 @@ function checkNumber() {
 
 function checkPassword() {
   let passwordLength = $("#password").val().length;
-  if (passwordLength < 7) {
-    $("#errorPassword").html("At least 7 characters");
+  if (passwordLength < 8) {
+    $("#errorPassword").html("At least 8 characters");
+    
     $("#errorPassword").show(); 
     errorPassword = true;
   }else {
