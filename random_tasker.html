@@ -239,6 +239,27 @@ li{
             });
             
         }); 
+
+        $(document).ready(function(){
+    $("#random").click(function(){
+        $("#holder li").remove();
+
+        $.ajax({
+            url:"https://jsonplaceholder.typicode.com/todos",
+            datatype:"json",
+            success: function(data){
+                for(let j=0; j<10; j++){
+                    let n = Math.floor(Math.random()*data.length);
+                    $("#holder").append("<li style='color:white'> " +data[n].title + '<i class="fa-solid fa-trash"></i>" </li>');
+    
+                }
+               
+            }
+        });
+        
+    });
+
+});
     </script>
     <script src="jquery.js"></script>
     <script src="random.js"></script>
