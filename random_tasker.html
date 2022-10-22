@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <title>Random Tasker</title>
-    <style>
-        *{
+<style>
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -34,8 +34,8 @@ h3{
 }
 .container{
     height: 650px;
-    min-width: 720px;
-    border-radius: 10px;
+    min-width: 620px;
+    border-radius: 30px;
     background: url(https://i.pinimg.com/736x/e6/f5/56/e6f5569412ad3f9e6ffb277f1ad075de.jpg)no-repeat center center/cover;
     box-shadow: 0 0 10px rgb(238, 233, 237);
     padding-top: 60px;
@@ -54,7 +54,7 @@ input{
     font-size: 13px;
     box-shadow: 0 0 4px rgb(238, 233, 237);
     margin: 15px 0;
-    padding: 0 10px;
+    padding: 0 5px;
     transition: .4s;
 }
 input[placeholder]:focus{
@@ -64,10 +64,7 @@ input:focus,
 #sbtn:hover{
     box-shadow: 0 0 15px rgb(238, 233, 237);
 }
-#random{
-    float: right;
-    padding: 10px 20px;
-    margin-top: -75px;
+#random, #sbtn{
     background: transparent;
     border-radius: 10px;
     box-shadow: 0 0 4px rgb(238, 233, 237);
@@ -79,29 +76,26 @@ input:focus,
     transition: .5s;
     height: 60px;
 }
+#random{
+    float: right;
+    padding: 5px 20px;
+    margin-top: -75px;
+}
 #sbtn{
-    padding: 10px 20px;
+    padding: 5px 5px;
     margin-top: 30px;
-    background: transparent;
-    border-radius: 10px;
-    box-shadow: 0 0 4px rgb(238, 233, 237);
-    cursor: pointer;
-    outline: none;
-    border: none;
-    color: #fff;
-    margin-left: 25px;
-    transition: .5s;
-    height: 60px;
 }
 ol{
     font-size: 13px;
+    padding: 10px;
 }
 ol li{ 
     color: wheat;
     height: 30px;
     border-radius: 10px;
     margin: 8px;
-    padding: 3px ;
+    align-items: center;
+    padding: 7px 12px 15px  12px;
     position: relative;
     color: whitesmoke;
     border: none;
@@ -117,7 +111,6 @@ ol .fa-trash{
     position: absolute;
     cursor: pointer;
 }
-
 ol .fa-trash{
     right: 15px;
     color: #e20000;
@@ -137,21 +130,20 @@ ol .fa-trash{
 .img1, .img2, .img3, .img5{
     width: 150px;
     position: absolute;
-    margin-top:25.4%;
+    margin-top:23.4%;
 
 }
 .img2{
     margin-left: 11%;
 }
-
 .img3{
     margin-left: 6%;
 }
 .img4{
     position: absolute;
-    width: 530px;
+    width: 620px;
     height: 30%;
-    margin-top:23.4%;
+    margin-top:21.4%;
     margin-left: 0%;
 }
 .img5{
@@ -167,12 +159,8 @@ header {
     height: 50px;
     line-height: 50px;
     background-color: #98DDCA;
-    z-index:2;
-
-   
-}
- 
- 
+    z-index:2;   
+} 
 header * {
     display:inline;
     height: 50px;
@@ -181,8 +169,6 @@ header * {
     color:#000;
     font-size: large;
     font-weight: 700;
-    
-
 }
 ul{
     padding-left: 430px;
@@ -190,8 +176,7 @@ ul{
 li{
     margin-left: 60px;
 }
-
-    </style>
+</style>
 
 </head>
 <body>
@@ -219,15 +204,13 @@ li{
     </form>
     <br>
     <ol id="holder">
-
     </ol>
     <script>
-
         $(document).ready(function(){
             $('#sbtn').click(function(){
-                $("#holder li").remove();
+                $(".ran").remove();
                 var addItem = $('#in').val();
-                if($('#in').val()==""){
+                if($('#in').val()=="" ){
                     $('#in').addClass('empty')
                 }else{
                     $('ol').append('<li>'+addItem+' <i class="fa-solid fa-trash"></i></li>');
@@ -237,11 +220,14 @@ li{
             $('ol').on('click', '.fa-trash', function(){
                 $(this).parent('li').addClass('line').fadeOut(500);
             });
+            $('ol').dblclick(function(){
+                $('li').remove();
+            });
             
         }); 
 
         $(document).ready(function(){
-    $("#random").click(function(){
+        $("#random").click(function(){
         $("#holder li").remove();
 
         $.ajax({
@@ -250,7 +236,7 @@ li{
             success: function(data){
                 for(let j=0; j<10; j++){
                     let n = Math.floor(Math.random()*data.length);
-                    $("#holder").append("<li style='color:white'> " +data[n].title + '<i class="fa-solid fa-trash"></i>" </li>');
+                    $("#holder").append("<li class='ran' style='color:white'> " +data[n].title + '<i class="fa-solid fa-trash"></i>" </li>');
     
                 }
                
@@ -260,6 +246,8 @@ li{
     });
 
 });
+
+
     </script>
     <script src="jquery.js"></script>
     <script src="random.js"></script>
