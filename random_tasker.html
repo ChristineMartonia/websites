@@ -88,6 +88,7 @@ input:focus,
 ol{
     font-size: 13px;
     padding: 10px;
+    max-height: 500px;
 }
 ol li{ 
     color: wheat;
@@ -130,7 +131,7 @@ ol .fa-trash{
 .img1, .img2, .img3, .img5{
     width: 150px;
     position: absolute;
-    margin-top:23.4%;
+    margin-top:24.4%;
 
 }
 .img2{
@@ -206,29 +207,58 @@ li{
     <ol id="holder">
     </ol>
     <script>
+        const task = 'https://jsonplaceholder.typicode.com/todos';
+
+        fetch(task)
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                for (let index = 0; index < 10; index++) {
+                    let limit = Math.floor(Math.random() * data.length);
+                    $("ol").append("<li class='rann'> " + data[limit].title + '<i class="fa-solid fa-trash"></i>" </li>');
+
+                }
+            })
+
+    .catch(function (error) {
+        console.log(error);
+    })
         $(document).ready(function(){
             $('#sbtn').click(function(){
-                $(".ran").remove();
+                
                 var addItem = $('#in').val();
                 if($('#in').val()=="" ){
                     $('#in').addClass('empty')
                 }else{
-                    $('ol').append('<li>'+addItem+' <i class="fa-solid fa-trash"></i></li>');
+                    $('ol').append('<li class="add">CUSTOM TASK: '+addItem+' <i class="fa-solid fa-trash"></i></li>');
                     $('#in').val('');
                 } 
             });
             $('ol').on('click', '.fa-trash', function(){
                 $(this).parent('li').addClass('line').fadeOut(500);
             });
-            $('ol').dblclick(function(){
-                $('li').remove();
-            });
             
-        }); 
+            $(document).on('dblclick', 'ol .add', function () {
+            $(this).addClass('line');
+            });
+
+            $(document).on('dblclick', 'ol .ran', function () {
+                $(this).addClass('line');
+            });
+                
+            });
+            $(document).on('dblclick', 'ol .rann', function () {
+                $(this).addClass('line');
+            });
+                
+            
+         
 
         $(document).ready(function(){
         $("#random").click(function(){
-        $("#holder li").remove();
+            $(".rann").remove();
+            $(".ran").remove();
 
         $.ajax({
             url:"https://jsonplaceholder.typicode.com/todos",
@@ -236,16 +266,18 @@ li{
             success: function(data){
                 for(let j=0; j<10; j++){
                     let n = Math.floor(Math.random()*data.length);
-                    $("#holder").append("<li class='ran' style='color:white'> " +data[n].title + '<i class="fa-solid fa-trash"></i>" </li>');
+                    $("#holder").append("<li class='ran'> " +data[n].title + '<i class="fa-solid fa-trash"></i>" </li>');
     
                 }
                
             }
+                });
+                
+            });
+
         });
         
-    });
 
-});
 
 
     </script>
